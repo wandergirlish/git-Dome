@@ -14,6 +14,6 @@ class student{
 	}
 	public void test()
 	{
-		Sustem.out.println("Yuuka math score is 99");
+		System.out.println("Yuuka math score is 99");
 	}
 }
