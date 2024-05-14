@@ -1,0 +1,23 @@
+# rpm 依赖性
+
+#yum 解决rpm的依赖性
+	yum update 更新 旧包更新
+	    upgrade 更新 旧包卸载 再安装新包
+	dnf  解决效率问题 dnf兼容可以查询软件包的信息
+		  配置dnf 管理软件包  更新所有包的更新
+==========================================================
+		  DNF 软件源服务
+	配置文件 .config 检查安装包 #定义 
+	DNF search list 
+	
+	DNF 命令行 
+	search 
+	install  
+	remvoe  
+	info 
+	clean #清除缓存
+	autoremove #自动移除依赖的包
+
+`		
+
+#
