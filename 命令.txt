@@ -1,0 +1,53 @@
+文件权限
+1.新建用户natasha，uid为1000，gid为555
+groupadd -g 555 natasha useradd -g 555 natasha
+
+2.修改natasha用户的家目录为/Natasha
+mv /home/natasha /home/Natahsa
+
+3.查看用户信息配置文件的最后一行
+tail -l /etc/passwd
+
+4.为natasha用户设置密码“123”
+passwd natasha 
+5.查看用户密码配置文件的最后一行
+ tail -1 /etc/shadow
+6.将natasha用户账户锁定
+ passwd -l natasha
+7.将natasha用户账户解锁
+ passwd -u natasha
+8.新建组police，gid为1999
+ groupadd -g 1999 police
+
+9.查看组配置文件的最后一行
+ cat  /etc/group
+
+10.将natasha用户加入police组
+ usermod -aG police natasha
+
+11.修改police组的组名为jingcha
+group -n jingcha police
+
+12.删除natasha用户，连家目录和邮箱一起删除
+删除jingcha组
+adddel -r natsha 
+13.在用户的主目录下创建目录test，进入test创建空文件file1
+以长格式形式显示文件信息，注意文件的权限和所属用户和组
+为文件file1设置权限，使其他用户可以对此文件进行写操作。
+查看设置结果
+，
+取消同组用户对文件file1的读取权限，并查看设置结果。
+用数字表示法为文件file1设置权限，所有者可读、可写、可执行，所属组用户和其他用户只具有读和执行的权限。设置完成后查看设置结果。
+用数字形式更改文件file1的权限，使所有者只能读取此文件。其他任何用户都没有权限。查看设置结果。
+回到上层目录，查看test的权限
+为其他用户添加对此目录的写权限
+
+
+新建目录/test/dir，属主为tom，数组为group1，/test目录的权限为777
+新建用户jack，切换到jack用户下，验证jack用户对dir目录的rwx权限（开启另外一个终端，依次修改dir目录的others权限）
+将jack加入group1组，验证jack用户对dir目录的rwx权限（开启另外一个终端，依次修改dir目录的group权限）
+切换到tom用户，验证tom用户对dir目录的rwx权限（开启另外一个终端，依次修改dir目录的user权限）
+在dir目录内新建文件tom.txt,属主为tom，属组为group1，/test目录的权限为777
+新建用户rose，切换到rose用户下，验证rose用户对tom.txt的rwx权限（开启另外一个终端，依次修改tom.txt的others权限来配合验证过程）
+将rose加入group1组，在rose用户下，验证rose用户对tom.txt的rwx权限（开启另外一个终端，依次修改tom.txt的group1权限来配合验证过程）
+
